@@ -25,11 +25,14 @@
                 addCss(`
                 @font-face {
                   font-family: 'Ming Lan';
-                  src: url(https://raw.githubusercontent.com/SettingDust/GoRPG/master/明兰.ttf) format('truetype');
+                  src: local('明兰'),
+                       url(https://raw.githubusercontent.com/SettingDust/GoRPG/master/ARIALN.woff2) format('woff2'),
+                       url(https://raw.githubusercontent.com/SettingDust/GoRPG/master/ARIALN.woff) format('woff'),
+                       url(https://raw.githubusercontent.com/SettingDust/GoRPG/master/ARIALN.ttf) format('truetype');
                 }
                 input {
                   border-radius: 2px;
-                  padding: 6px 7px;
+                  padding: 6px 7px; 
                 }
                 .focus {
                   bottom: auto;
