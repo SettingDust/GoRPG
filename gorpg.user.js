@@ -23,6 +23,10 @@
             //Base
             {
                 addCss(`
+                @font-face {
+                  font-family: 'Ming Lan';
+                  src: url(https://raw.githubusercontent.com/SettingDust/GoRPG/master/明兰.ttf) format('truetype');
+                }
                 input {
                   border-radius: 2px;
                   padding: 6px 7px;
@@ -126,6 +130,9 @@
                       width: auto;
                       background-attachment: fixed;
                       height: 100vh;
+                    }
+                    .st_search * {
+                      font-family: "Ming Lan";
                     }`, "Top");
                 }
                 let top_background = $("#ph_top .head_bg .bg_one");
