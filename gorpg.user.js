@@ -32,7 +32,7 @@
                 }
                 input {
                   border-radius: 2px;
-                  padding: 6px 7px; 
+                  padding: 6px 7px;
                 }
                 .focus {
                   bottom: auto;
@@ -49,11 +49,17 @@
             {
                 addCss(`
                 #header .logo {
-                  background-position: center;
-                  background-size: 78px 33px;
-                  width: 78px;
                   height: 64px;
+                  line-height: 64px;
+                  background: none;
                   margin-right: 24px;
+                  color: rgb(13,137,239);
+                }
+                .logo * {
+                  font-family: "Ming Lan";
+                  font-weight: 500;
+                  font-size: 2rem;
+                  text-align: center;
                 }
                 #header {
                   height: 64px;
@@ -83,7 +89,7 @@
                   color: #fff;
                 }
                 #header .discover.open, .aandq:hover, #header .discover.open, .aandq.a {
-                  background-color:rgba(13,137,239,0.12);
+                  background-color:rgba(13,137,239,0.32);
                 }
                 #header .whitespace {
                   flex: 1 1 auto;
@@ -92,6 +98,11 @@
                   position: relative;
                   background: transparent;
                 }`, "Nav");
+
+                let logo = $(".logo");
+                let logo_text = $("<h2\>");
+                logo_text.text("GORPG");
+                logo.append(logo_text);
             }
             let whitespace = $("<div/>");
             whitespace.addClass("whitespace");
@@ -188,25 +199,13 @@
                             }
                             .st_search .search_wrap.focus {
                               background: #fff;
+                            }
+                            .st_search h1 {
+                              font-size: 4rem;
                             }`,
                             "Search");
                     }
                     let search_wrap = $(".search_wrap");
-                    let search_wrap_input = $("<input\>");
-                    search_wrap.children().remove();
-                    search_wrap.append(search_wrap_input);
-                    search_wrap_input.blur(() => {
-                        search_wrap.removeClass("focus");
-                    });
-                    search_wrap_input.focus(() => {
-                        search_wrap.addClass("focus");
-                    });
-                    search_wrap_input.keypress(function (e) {
-                        if (e.keyCode === 13) {
-                            search(search_wrap_input.val());
-                        }
-                    });
-                    search_wrap_input.focus();
                 };
                 pageRender.portal.top.search();
             };
